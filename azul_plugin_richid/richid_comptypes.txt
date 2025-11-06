@@ -1,0 +1,210 @@
+#
+# Derived from:
+# - https://github.com/JusticeRage/Manalyze/blob/master/manape/nt_values.cpp
+# - http://bytepointer.com/articles/the_microsoft_rich_header.htm
+# - https://gist.github.com/skochinsky/07c8e95e33d9429d81a75622b5d24c8b
+#
+# Note: the unique Id's can also infer tool name/version so this list could
+# be extended to include more specific information in the future.
+#
+0x000 Unmarked objects
+0x001 Total imports
+0x002 Imports
+0x003 OMF objects
+0x004 Linker
+0x005 OMF objects
+0x006 Resource objects
+0x007 VB objects
+0x008 C objects
+0x009 VB Form objects
+0x00A C objects
+0x00B C++ objects
+0x00C OBJ objects
+0x00D VB objects
+0x00E ASM objects
+0x00F ASM objects
+0x010 Linker
+0x011 OMF objects
+0x012 ASM objects
+0x013 Linker
+0x014 OMF objects
+0x015 C objects
+0x016 C++ objects
+0x017 C objects
+0x018 C++ objects
+0x019 Imports
+0x01A OMF objects
+0x01B VB objects
+0x01C C objects
+0x01D C++ objects
+0x01E Linker
+0x01F OMF objects
+0x020 Linker
+0x021 OMF objects
+0x022 VB objects
+0x023 C objects
+0x024 C++ objects
+0x025 Linker
+0x026 OMF objects
+0x027 OBJ objects
+0x028 Linker
+0x029 OMF objects
+0x02A ASM objects
+0x02B C objects
+0x02C C++ objects
+0x02D ASM objects
+0x02E ASM objects
+0x02F VB objects
+0x030 C objects
+0x031 C++ objects
+0x032 C objects
+0x033 C++ objects
+0x034 C objects
+0x035 C++ objects
+0x036 Imports
+0x037 OMF objects
+0x038 Resource objects
+0x039 C objects
+0x03A C++ objects
+0x03C Linker
+0x03D Linker
+0x03E Exports
+0x03F Exports
+0x040 ASM objects
+0x041 C objects
+0x042 C++ objects
+0x043 C objects
+0x044 C++ objects
+0x045 Resource objects
+0x046 Resource objects
+0x047 Linker
+0x048 OMF objects
+0x049 Exports
+0x04A Imports
+0x04B ASM objects
+0x04C C objects
+0x04D C++ objects
+0x04E C objects
+0x04F C++ objects
+0x050 C objects
+0x051 C++ objects
+0x052 C objects
+0x053 C++ objects
+0x054 C objects
+0x055 C++ objects
+0x056 Linker
+0x057 OMF objects
+0x058 Exports
+0x059 Imports
+0x05A Linker
+0x05B OMF objects
+0x05C Exports
+0x05D Imports
+0x05E Resource objects
+0x05F C objects
+0x060 C++ objects
+0x061 C objects
+0x062 C++ objects
+0x063 C objects
+0x064 C++ objects
+0x065 C objects
+0x066 C++ objects
+0x067 C objects
+0x068 C++ objects
+0x069 OBJ objects
+0x06A OBJ objects
+0x06D C objects
+0x06E C++ objects
+0x06F C objects
+0x070 C++ objects
+0x071 C objects
+0x072 C++ objects
+0x073 C objects
+0x074 C++ objects
+0x075 C objects
+0x076 C++ objects
+0x078 Linker
+0x079 OMF objects
+0x07A Exports
+0x07B Imports
+0x07C Resource objects
+0x07D ASM objects
+0x07E OBJ objects
+0x080 C objects
+0x081 C++ objects
+0x082 MSIL objects
+0x083 C objects
+0x084 C++ objects
+0x085 C objects
+0x086 C++ objects
+0x087 C objects
+0x088 C++ objects
+0x089 C objects
+0x08A C++ objects
+0x08B MSIL objects
+0x08C C objects
+0x08D C++ objects
+0x08E C objects
+0x08F C++ objects
+# Note: diff sources have these in diff order (linker/res)
+0x091 Linker
+0x092 Exports
+0x093 Imports
+0x094 Resource objects
+0x095 ASM objects
+0x096 OBJ objects
+0x097 Resource objects
+0x098 OBJ objects
+0x09A Resource objects
+0x09B Exports
+0x09C Imports
+0x09D Linker
+0x09E ASM objects
+0x0AA C objects
+0x0AB C++ objects
+0x0AC C objects
+0x0AD C++ objects
+0x0AE C objects
+0x0AF C++ objects
+0x0B0 MSIL objects
+0x0B1 C objects
+0x0B2 C++ objects
+0x0B3 C objects
+0x0B4 C++ objects
+0x0B7 Linker
+0x0B8 Exports
+0x0B9 Imports
+0x0BA Resource objects
+0x0BB ASM objects
+0x0BC OBJ objects
+0x0C7 OBJ objects
+0x0C9 Resource objects
+0x0CA Exports
+0x0CB Imports
+0x0CC Linker
+0x0CD ASM objects
+0x0CE C objects
+0x0CF C++ objects
+0x0D0 C objects
+0x0D1 C++ objects
+0x0D2 C objects
+0x0D3 C++ objects
+0x0D4 MSIL objects
+0x0D5 C objects
+0x0D6 C++ objects
+0x0D7 C objects
+0x0D8 C++ objects
+0x0DB Resource objects
+0x0DC Exports
+0x0ED Imports
+0x0DE Linker
+0x0DF ASM objects
+0x0E0 C objects
+0x0E1 C++ objects
+0x0FF Resource objects
+0x100 Exports
+0x101 Imports
+0x102 Linker
+0x103 ASM objects
+0x104 C objects
+0x105 C++ objects

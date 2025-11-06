@@ -1,0 +1,164 @@
+import unittest
+
+from azul_plugin_richid import richid
+
+
+class TestRichID(unittest.TestCase):
+    def test_rich_pefile(self):
+        """test_rich_pefile: test valid output for pe with a rich signature"""
+        output = richid.parse(HAS_RICH)
+
+        self.assertEqual(
+            output, EXPECTED_RICH, "Output did not match:\n GOT: %s\nExpected: %s" % (output, EXPECTED_RICH)
+        )
+
+    def test_non_rich_pefile(self):
+        """test_non_rich_pefile: test pe without rich signature"""
+        self.assertRaises(richid.NoRichException, richid.parse, NO_RICH)
+
+    def test_rich_checksum(self):
+        """test_rich_checksum: test calculation of checksum/mask and verification"""
+        cs = richid.checksum(HAS_RICH)
+        self.assertTrue(cs)
+        output = richid.parse(HAS_RICH)
+        self.assertEqual(cs, output[0])
+        self.assertTrue(richid.checksum_valid(HAS_RICH))
+
+    def test_non_rich_checksum(self):
+        """test_non_rich_checksum: test pe without rich signature"""
+        self.assertRaises(richid.NoRichException, richid.checksum, NO_RICH)
+
+
+# Expected results
+EXPECTED_RICH = (
+    b"\x15\x1fv\xa5",
+    [
+        {
+            "compid": 9795593,
+            "minver": 30729,
+            "majver": 5,
+            "typeid": 149,
+            "prodid": 30729,
+            "refcount": 1,
+            "entrytype": "ASM objects",
+            "product": "VS2008 SP1 build 30729",
+        },
+        {
+            "compid": 8681481,
+            "minver": 30729,
+            "majver": 4,
+            "typeid": 132,
+            "prodid": 30729,
+            "refcount": 2,
+            "entrytype": "C++ objects",
+            "product": "VS2008 SP1 build 30729",
+        },
+        {
+            "compid": 9664521,
+            "minver": 30729,
+            "majver": 3,
+            "typeid": 147,
+            "prodid": 30729,
+            "refcount": 5,
+            "entrytype": "Imports",
+            "product": "VS2008 SP1 build 30729",
+        },
+        {
+            "compid": 8111655,
+            "minver": 50727,
+            "majver": 11,
+            "typeid": 123,
+            "prodid": 50727,
+            "refcount": 2,
+            "entrytype": "Imports",
+            "product": "VS2012 build 50727 / VS2005 build 50727",
+        },
+        {
+            "compid": 65536,
+            "minver": 0,
+            "majver": 1,
+            "typeid": 1,
+            "prodid": 0,
+            "refcount": 40,
+            "entrytype": "Total imports",
+        },
+        {
+            "compid": 8615945,
+            "minver": 30729,
+            "majver": 3,
+            "typeid": 131,
+            "prodid": 30729,
+            "refcount": 22,
+            "entrytype": "C objects",
+            "product": "VS2008 SP1 build 30729",
+        },
+        {
+            "compid": 9730057,
+            "minver": 30729,
+            "majver": 4,
+            "typeid": 148,
+            "prodid": 30729,
+            "refcount": 1,
+            "entrytype": "Resource objects",
+            "product": "VS2008 SP1 build 30729",
+        },
+        {
+            "compid": 9533449,
+            "minver": 30729,
+            "majver": 1,
+            "typeid": 145,
+            "prodid": 30729,
+            "refcount": 1,
+            "entrytype": "Linker",
+            "product": "VS2008 SP1 build 30729",
+        },
+    ],
+)
+
+# Partial PE headers for testing
+HAS_RICH = (
+    b"MZ\x90\x00\x03\x00\x00\x00\x04\x00\x00\x00\xff\xff\x00\x00\xb8\x00\x00"
+    b"\x00\x00\x00\x00\x00@\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"
+    b"\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"
+    b"\x00\x00\x00\x00\x00\xe8\x00\x00\x00\x0e\x1f\xba\x0e\x00\xb4\t\xcd!\xb8"
+    b"\x01L\xcd!This program cannot be run in DOS mode.\r\r\n$\x00\x00\x00\x00"
+    b"\x00\x00\x00Q~\x18\xf6\x15\x1fv\xa5\x15\x1fv\xa5\x15\x1fv\xa5\x1cg\xe3"
+    b"\xa5\x14\x1fv\xa5\x1cg\xf2\xa5\x17\x1fv\xa5\x1cg\xe5\xa5\x10\x1fv\xa52"
+    b"\xd9\r\xa5\x17\x1fv\xa5\x15\x1fw\xa5=\x1fv\xa5\x1cg\xf5\xa5\x03\x1fv\xa5"
+    b"\x1cg\xe2\xa5\x14\x1fv\xa5\x1cg\xe7\xa5\x14\x1fv\xa5Rich\x15\x1fv\xa5\x00"
+    b"\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00PE\x00\x00L"
+    b"\x01\x04\x00}\xf3\x93Q\x00\x00\x00\x00\x00\x00\x00\x00\xe0\x00\x03\x01"
+    b"\x0b\x01\t\x00\x00\n\x00\x00\x00Z\x00\x00\x00\x00\x00\x00\x14\x13\x00"
+    b"\x00\x00\x10\x00\x00"
+)
+
+
+NO_RICH = (
+    b"MZP\x00\x02\x00\x00\x00\x04\x00\x0f\x00\xff\xff\x00\x00\xb8\x00\x00\x00"
+    b"\x00\x00\x00\x00@\x00\x1a\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"
+    b"\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"
+    b"\x00\x00\x00\x00\x02\x00\x00\xba\x10\x00\x0e\x1f\xb4\t\xcd!\xb8\x01L\xcd!"
+    b"\x90\x90This program must be run under Win32\r\n$7\x00\x00\x00\x00\x00\x00"
+    b"\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"
+    b"\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"
+    b"\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"
+    b"\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"
+    b"\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"
+    b"\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"
+    b"\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"
+    b"\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"
+    b"\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"
+    b"\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"
+    b"\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"
+    b"\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"
+    b"\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"
+    b"\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"
+    b"\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"
+    b"\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"
+    b"\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"
+    b"\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"
+    b"\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"
+    b"\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"
+    b"\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"
+    b"\x00\x00\x00\x00\x00\x00\x00\x00PE\x00"
+)

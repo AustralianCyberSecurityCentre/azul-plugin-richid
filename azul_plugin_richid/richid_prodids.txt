@@ -1,0 +1,115 @@
+#
+# Derived from:
+# - https://github.com/JusticeRage/Manalyze/blob/master/manape/nt_values.cpp
+# - http://bytepointer.com/articles/the_microsoft_rich_header.htm
+#
+# Roughly in product release order. i.e. id's are not allocated in order/sequentially
+#
+# 0x00 used for total imports/counts
+0x1c83 MASM 6.13 build 7299
+0x20fc MASM 6.14 build 8444
+0x2263 MASM 6.15 build 8803
+0x1c87 VS97 SP3 link 5.10.7303
+0x0684 VS97 SP3 cvtres 5.00.1668
+0x06b8 VS98 cvtres build 1720
+0x1fe8 VS98 build 8168
+0x1fe9 Visual Basic 6.0 build 8169
+0x212f Visual Basic 6.0 SP3 build 8495
+0x22ad Visual Basic 6.0 SP4 build 8877
+0x2304 Visual Basic 6.0 SP5 build 8964
+0x06c7 VS98 SP6 cvtres build 1736
+0x20ff VC++ 6.0 SP3 build 8447
+0x225f VC++ 6.0 SP4 build 8799
+0x2306 VC++ 6.0 SP5 build 8804
+0x2354 VC++ 6.0 SP5 Processor Pack build 9044
+0x2636 VS98 SP6 build 9782
+0x2346 VS2000 (Beta 1) / MASM 6.15 build 9030
+0x2426 VS2001 (Beta 2) build 9254
+0x24fa VS2002 (.NET) build 9466
+0x26e3 VS2002 (.NET) SP1 build 9955
+0x0bec VS2003 (.NET) Free Toolkit build 3052
+0x0c05 VS2003 (.NET) build 3077
+0x0fc3 VS2003 (.NET) build 4035
+0x178e VS2003 (.NET) SP1 build 6030
+0xc497 VS2005 (Beta) build 50327
+0x521e VS2008 build 21022
+0x7809 VS2008 SP1 build 30729
+0x766f VS2010 build 30319
+0x9d1b VS2010 SP1 build 40219
+0xc627 VS2012 build 50727 / VS2005 build 50727
+0xc751 VS2012 build 51025
+0xc7a2 VS2012 UPD1 build 51106
+0xeb9b VS2012 UPD2 build 60315
+0xecc2 VS2012 UPD3 build 60610
+0xee66 VS2012 UPD4 build 61030
+0x520d VS2013 build 21005
+0x7725 VS2013 UPD2 build 30501
+0x7803 VS2013 UPD3 build 30723
+0x797d VS2013 UPD4 build 31101
+0x9eb5 VS2013 UPD5 build 40629
+0x56c7 VS2015 Preview build 22215
+0x59f2 VS2015 build 23026
+0x5bd2 VS2015 UPD1 build 23506
+0x5d6e VS2015 UPD2 build 23918
+0x5e3b VS2015 UPD3 build 24123
+0x5e92 VS2015 UPD3 build 24210
+0x5e95 VS2015 UPD3 build 24213
+0x5e97 VS2015 UPD3.1 build 24215
+0x61b0 VS2015/2017 runtime 25008
+0x61b9 VS2017 v15.0 compiler 25017
+0x61bb VS2017 v15.2 compiler 25019
+0x6273 VS2017 v15.?.? build 25203
+0x62ed VS2015/2017 runtime 25325
+0x63a2 VS2017 v15.3.* compiler 25506
+0x63cb VS2017 v15.4.* compiler 25547
+0x646f VS2015/2017 runtime 25711
+0x64d2 VS2015/2017 runtime 25810
+0x64e6 VS2017 v15.5 compiler 25830
+0x64e7 VS2017 v15.5.2 compiler 25831
+0x64ea VS2017 v15.5.3-4 build 25834
+0x64eb VS2017 v15.5.5 build 25835
+0x654a VS2017 v15.?.? build 25930
+0x65A4 VS 2015/2017 runtime 26020
+0x6610 VS2017 v15.6 compiler 26128
+0x6611 VS2017 v15.6.3-5 compiler 26129
+0x6613 VS2017 v15.6.6 compiler 26131
+0x6614 VS2017 v15.6.7 compiler 26132
+0x6725 VS 2015/2017 runtime 26405
+0x673C VS2017 v15.7 compiler 26428
+0x673D VS2017 v15.7.2 compiler 26429
+0x673E VS2017 v15.7.3 compiler 26430
+0x673F VS2017 v15.7.4 compiler 26431
+0x6741 VS2017 v15.7.5 compiler 26433
+0x6852 VS 2015/2017 runtime 26706
+0x6866 VS2017 v15.8.1 compiler 26726
+0x6867 VS2017 v15.8.2 compiler 26727
+0x6868 VS2017 v15.8.3 compiler 26728
+0x6869 VS2017 v15.8.4 compiler 26729
+0x686A VS2017 v15.8.5-8 compiler 26730
+0x686C VS2017 v15.8.9 compiler 26732
+0x698F VS2017 v15.9.0-1 compiler 27023
+0x6984 VS 2015/2017 runtime 27012
+0x6990 VS2017 v15.9.2-3 compiler 27024
+0x6991 VS2017 v15.9.4 compiler 27025
+0x6992 VS2017 v15.9.5-6 compiler 27026
+0x6993 VS2017 v15.9.7-10 compiler 27027
+0x6996 VS2017 v15.9.11 compiler 27030
+0x6997 VS2017 v15.9.12-13 compiler 27031
+0x6998 VS2017 v15.9.14-15 compiler 27032
+0x699A VS2017 v15.9.16-18 compiler 27034
+0x699B VS2017 v15.9.19 compiler 27035
+0x6B74 VS2019 RTM compiler 27508
+0x6C36 VS2019 Update 1 (16.1) compiler 27702
+0x6CAD VS 2015/2017/2019 runtime 27821
+0x6D01 VS2019 Update 2 (16.2) compiler 27905
+0x6DCB VS2019 Update 3 (16.3) compiler 28107
+0x6DD5 VS 2015/2017/2019 runtime 28117
+0x6E9A VS2019 Update 4 (16.4.0-2) compiler 28314
+0x6E9B VS2019 Update 4 (16.4.3) compiler 28315
+0x6E9C VS2019 Update 4 (16.4.4-5) compiler 28316
+0x6E9F VS2019 Update 4 (16.4.6) compiler 28319
+0x6F0B VS 2015/2017/2019 runtime 28427
+0x6FC2 VS2019 Update 5 (16.5.0) compiler 28610
+0x6FC3 VS2019 Update 5 (16.5.1) compiler 28611
+0x6FC4 VS2019 Update 5 (16.5.2-3) compiler 28612
+0x6FC6 VS2019 Update 5 (16.5.4-5) compiler 28614

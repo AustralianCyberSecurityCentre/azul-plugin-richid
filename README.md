@@ -88,10 +88,14 @@ tox -e test
 
 ## Dependency management
 
-Dependencies are managed in the requirements.txt, requirements_test.txt and debian.txt file.
+Dependencies are managed in the pyproject.toml and debian.txt file.
 
-The requirements files are the python package dependencies for normal use and specific ones for tests
-(e.g pytest, black, flake8 are test only dependencies).
+Version pinning is achieved using the `uv.lock` file.
+
+To add new dependencies it's recommended to use uv with the command `uv add <new-package>`
+    or for a dev package `uv add --dev <new-dev-package>`
+
+The tool used for linting and managing styling is `ruff` and it is configured via `pyproject.toml`
 
 The debian.txt file manages the debian dependencies that need to be installed on development systems and docker images.
 

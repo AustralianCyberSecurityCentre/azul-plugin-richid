@@ -35,7 +35,7 @@ Documentation = "https://australiancybersecuritycentre.github.io/azul/"
 Repository = "https://github.com/AustralianCyberSecurityCentre/azul-plugin-richid"
 
 [[tool.uv.index]]
-url = "https://pypi.org/simple"
+url = "https://devpi.acsc.internal/azul/stable/+simple"
 default = true
 
 [tool.hatch.version]

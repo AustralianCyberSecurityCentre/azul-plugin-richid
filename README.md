@@ -91,6 +91,7 @@ tox -e test
 Dependencies are managed in the pyproject.toml and debian.txt file.
 
 Version pinning is achieved using the `uv.lock` file.
+Because the `uv.lock` file is configured to use a private UV registry, external developers using UV will need to delete the existing `uv.lock` file and update the project configuration to point to the publicly available PyPI registry instead.
 
 To add new dependencies it's recommended to use uv with the command `uv add <new-package>`
     or for a dev package `uv add --dev <new-dev-package>`

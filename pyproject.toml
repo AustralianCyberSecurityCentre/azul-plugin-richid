@@ -34,9 +34,28 @@ azul-plugin-richid = "azul_plugin_richid.main:main"
 Documentation = "https://australiancybersecuritycentre.github.io/azul/"
 Repository = "https://github.com/AustralianCyberSecurityCentre/azul-plugin-richid"
 
+[tool.uv]
+package = true
+exclude-newer = "1 week"
+exclude-newer-package = { azul-bedrock = false, azul-runner = false, azul-security=false, azul-metastore = false, azul-nsrl-lookup-serve=false, azul-plugin-retrohunt = false }
+
+[tool.uv.sources]
+azul-bedrock = { index="cache"}
+azul-runner = { index="cache" }
+azul-metastore = { index="cache"}
+azul-security = { index="cache"}
+azul-nsrl-lookup-server = { index="cache"}
+azul-plugin-retrohunt = { index="cache" }
+
 [[tool.uv.index]]
-url = "https://devpi.acsc.internal/azul/stable/+simple"
+name = "pypi"
+url = "https://pypi.org/simple"
 default = true
+
+[[tool.uv.index]]
+name = "cache"
+url = "https://devpi.acsc.internal/azul/stable/"
+explicit = true
 
 [tool.hatch.version]
 source = "vcs"

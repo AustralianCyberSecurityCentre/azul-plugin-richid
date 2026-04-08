@@ -24,6 +24,7 @@ classifiers=[
     "Topic :: Software Development :: Libraries",
 ]
 dependencies = [
+    "azul-bedrock>=11.0.26",
     "azul-runner>=9.0.38",
 ]
 

@@ -8,7 +8,7 @@ resolution-markers = [
 ]
 
 [options]
-exclude-newer = "2026-03-31T05:33:10.538934179Z"
+exclude-newer = "2026-04-01T03:09:33.070274145Z"
 exclude-newer-span = "P1W"
 
 [options.exclude-newer-package]
@@ -53,8 +53,8 @@ wheels = [
 
 [[package]]
 name = "azul-bedrock"
-version = "10.0.45"
-source = { registry = "https://pypi.org/simple" }
+version = "11.0.26"
+source = { registry = "https://devpi.acsc.internal/azul/stable/" }
 dependencies = [
     { name = "babel" },
     { name = "cachetools" },
@@ -70,9 +70,8 @@ dependencies = [
     { name = "starlette" },
     { name = "yara-python" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/33/73/172a53dc21b0d22ce0493acde50ddfa5ec30b58ed131b678148f34e229b2/azul_bedrock-10.0.45.tar.gz", hash = "sha256:111ab9cf950892fba6c4b52518edafca22fae9524274aa8224941f1cd6a04cd5", size = 256893, upload-time = "2026-03-13T03:08:36.855Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/1d/d1/1bc3d9bafac28275f22dc21a40d4b25c1bf7b0ea86a8bc7efc5bf9af2a25/azul_bedrock-10.0.45-py3-none-any.whl", hash = "sha256:8378d04aaa93ac073bfa4cfb53885aaf4313b0a0c90cef7a0048f8868f4c1f80", size = 93517, upload-time = "2026-03-13T03:08:34.938Z" },
+    { url = "https://devpi.acsc.internal/azul/stable/+f/65f/8c4e1c3822d11/azul_bedrock-11.0.26-py3-none-any.whl", hash = "sha256:65f8c4e1c3822d11927b66c47312f74d2092a83ce3568e72d1692885b31517b5" },
 ]
 
 [package.optional-dependencies]
@@ -89,6 +88,7 @@ test-utils = [
 name = "azul-plugin-richid"
 source = { editable = "." }
 dependencies = [
+    { name = "azul-bedrock" },
     { name = "azul-runner" },
 ]
 
@@ -101,7 +101,10 @@ dev = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "azul-runner", specifier = ">=9.0.38", index = "https://devpi.acsc.internal/azul/stable/" }]
+requires-dist = [
+    { name = "azul-bedrock", specifier = ">=11.0.26", index = "https://devpi.acsc.internal/azul/stable/" },
+    { name = "azul-runner", specifier = ">=9.0.38", index = "https://devpi.acsc.internal/azul/stable/" },
+]
 
 [package.metadata.requires-dev]
 dev = [

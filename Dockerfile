@@ -44,9 +44,9 @@ RUN uv pip install --system --no-deps --find-links /tmp/ azul-plugin-richid==$(h
 
 # Upgrade to dev azul dependencies or upgrade non-dev azul dependencies depending on branch.
 RUN if [ "$GIT_BRANCH_NAME" = "refs/heads/dev" ] ; then \
-    uv pip freeze | grep 'azul-.*==' | grep -v '^azul-plugin-richid' | cut -d "=" -f 1 | xargs -I {} uv pip install --extra-index-url=$(UV_INDEX_URL) --system --upgrade --no-deps --prerelease allow '{}>=0.0.0-dev' \
+    uv pip freeze | grep 'azul-.*==' | grep -v '^azul-plugin-richid' | cut -d "=" -f 1 | xargs -I {} uv pip install --extra-index-url=$UV_INDEX_URL --system --upgrade --no-deps --prerelease allow '{}>=0.0.0-dev' \
     else \
-    uv pip freeze | grep 'azul-.*==' | grep -v '^azul-plugin-richid' | cut -d "=" -f 1 | xargs -I {} uv pip install --extra-index-url=$(UV_INDEX_URL) --system --upgrade --no-deps '{}>=0.0.0'\
+    uv pip freeze | grep 'azul-.*==' | grep -v '^azul-plugin-richid' | cut -d "=" -f 1 | xargs -I {} uv pip install --extra-index-url=$UV_INDEX_URL --system --upgrade --no-deps '{}>=0.0.0'\
     ;fi
 
 FROM $REGISTRY/$BASE_IMAGE:$BASE_TAG AS base

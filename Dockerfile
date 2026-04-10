@@ -43,11 +43,11 @@ RUN uv pip uninstall --system azul-plugin-richid
 RUN uv pip install --system --no-deps --find-links /tmp/ azul-plugin-richid==$(hatchling version)
 
 # Upgrade to dev azul dependencies or upgrade non-dev azul dependencies depending on branch.
-RUN if [ "$GIT_BRANCH_NAME" = "refs/heads/dev" ] ; then \
-    uv pip freeze | grep 'azul-.*==' | grep -v '^azul-plugin-richid' | cut -d "=" -f 1 | xargs -I {} uv pip install --extra-index-url=$UV_INDEX_URL --system --upgrade --no-deps --prerelease allow '{}>=0.0.0-dev' \
+RUN if [ "$GIT_BRANCH_NAME" = "refs/heads/dev" ]; then \
+    uv pip freeze | grep 'azul-.*==' | grep -v '^azul-plugin-richid' | cut -d "=" -f 1 | xargs -I {} uv pip install --extra-index-url=$UV_INDEX_URL --system --upgrade --no-deps --prerelease allow '{}>=0.0.0-dev'; \
     else \
-    uv pip freeze | grep 'azul-.*==' | grep -v '^azul-plugin-richid' | cut -d "=" -f 1 | xargs -I {} uv pip install --extra-index-url=$UV_INDEX_URL --system --upgrade --no-deps '{}>=0.0.0'\
-    ;fi
+    uv pip freeze | grep 'azul-.*==' | grep -v '^azul-plugin-richid' | cut -d "=" -f 1 | xargs -I {} uv pip install --extra-index-url=$UV_INDEX_URL --system --upgrade --no-deps '{}>=0.0.0'; \
+    fi
 
 FROM $REGISTRY/$BASE_IMAGE:$BASE_TAG AS base
 ENV DEBIAN_FRONTEND=noninteractive

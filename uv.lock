@@ -8,7 +8,7 @@ resolution-markers = [
 ]
 
 [options]
-exclude-newer = "2026-04-11T16:46:14.538003468Z"
+exclude-newer = "2026-04-11T17:31:17.618929076Z"
 exclude-newer-span = "P1W"
 
 [options.exclude-newer-package]
@@ -120,7 +120,7 @@ dev = [
 
 [[package]]
 name = "azul-runner"
-version = "11.0.55"
+version = "11.0.58"
 source = { registry = "https://devpi.acsc.internal/azul/stable/" }
 dependencies = [
     { name = "azul-bedrock" },
@@ -133,7 +133,7 @@ dependencies = [
     { name = "watchdog" },
 ]
 wheels = [
-    { url = "https://devpi.acsc.internal/azul/stable/+f/2eb/490dd67a111b7/azul_runner-11.0.55-py3-none-any.whl", hash = "sha256:2eb490dd67a111b70f5c0679893310680bc0177951c128ad2cbe2948fb7b4cee" },
+    { url = "https://devpi.acsc.internal/azul/stable/+f/a7e/5ad1975e2e94d/azul_runner-11.0.58-py3-none-any.whl", hash = "sha256:a7e5ad1975e2e94de2bba6de71a23886a5d3902031771a9545be1d6e2daa366e" },
 ]
 
 [package.optional-dependencies]

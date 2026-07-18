@@ -53,7 +53,7 @@ wheels = [
 
 [[package]]
 name = "azul-bedrock"
-version = "12.0.38"
+version = "12.0.41"
 source = { registry = "https://devpi.acsc.internal/azul/stable/" }
 dependencies = [
     { name = "babel" },
@@ -71,7 +71,7 @@ dependencies = [
     { name = "yara-x" },
 ]
 wheels = [
-    { url = "https://devpi.acsc.internal/azul/stable/+f/659/d47bfaa4e94d1/azul_bedrock-12.0.38-py3-none-any.whl", hash = "sha256:659d47bfaa4e94d12792d7677420bf5d14788a6f9feae8d6182fe311d74e0ad6" },
+    { url = "https://devpi.acsc.internal/azul/stable/+f/fe4/adf7443e6f4b4/azul_bedrock-12.0.41-py3-none-any.whl", hash = "sha256:fe4adf7443e6f4b4622211e4eb4a009c3a00029b406d53b034dbcd199d3f170e" },
 ]
 
 [package.optional-dependencies]
@@ -120,7 +120,7 @@ dev = [
 
 [[package]]
 name = "azul-runner"
-version = "12.0.45"
+version = "12.0.46"
 source = { registry = "https://devpi.acsc.internal/azul/stable/" }
 dependencies = [
     { name = "azul-bedrock" },
@@ -133,7 +133,7 @@ dependencies = [
     { name = "watchdog" },
 ]
 wheels = [
-    { url = "https://devpi.acsc.internal/azul/stable/+f/2a2/98d3c1551d654/azul_runner-12.0.45-py3-none-any.whl", hash = "sha256:2a298d3c1551d654b5ed6cdd848039de9635e1b7db5118f51371743610b5c1a2" },
+    { url = "https://devpi.acsc.internal/azul/stable/+f/367/93bb51f299bac/azul_runner-12.0.46-py3-none-any.whl", hash = "sha256:36793bb51f299bacf54fe924841e81318014ef08b8579a61a805dfca69ce1a13" },
 ]
 
 [package.optional-dependencies]
@@ -1819,7 +1819,7 @@ wheels = [
 
 [[package]]
 name = "virtualenv"
-version = "21.6.0"
+version = "21.6.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "distlib" },
@@ -1827,9 +1827,9 @@ dependencies = [
     { name = "platformdirs" },
     { name = "python-discovery" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/74/65/ec1d92091671e6407d3e7c1f5801413bb7b2b57630a50cae7750456ba0ed/virtualenv-21.6.0.tar.gz", hash = "sha256:e18a4d750f2b64dea73e72ffde3922f3c52365fabdc8157ebd3da20d031c4734", size = 5526111, upload-time = "2026-07-06T22:49:56.972Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/34/d9/b477fddb68840b570af8b22afe9b035cbc277b5fb7b33dea390617a8b10f/virtualenv-21.6.1.tar.gz", hash = "sha256:15f978b7cd329f24855ff4a0c4b4899cc7678589f49adbdcbbb4d3232e641128", size = 5526620, upload-time = "2026-07-10T19:33:53.312Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/b8/e7/2fbd0cc1653c53eed8f10670538bb547de2b3e37aacad283faa82a71094b/virtualenv-21.6.0-py3-none-any.whl", hash = "sha256:bce9d097950fef9d81129b333babfb7767072850c2f1acce0ec536708401bfd1", size = 5506216, upload-time = "2026-07-06T22:49:54.941Z" },
+    { url = "https://files.pythonhosted.org/packages/c1/7c/4e7225d46d634a0d8d534dd8a6ce0c319d09b4d0cf0337eb314ca4789d8c/virtualenv-21.6.1-py3-none-any.whl", hash = "sha256:afe991df855715a2b2f60edfcc0107ef95a79fdfd8cb4cdaa71603d1c12e463b", size = 5506392, upload-time = "2026-07-10T19:33:51.629Z" },
 ]
 
 [[package]]

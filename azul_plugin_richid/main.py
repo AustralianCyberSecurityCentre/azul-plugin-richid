@@ -1,10 +1,12 @@
 """Analyse rich header information from Microsoft PE files."""
 
 import binascii
+from typing import Any
 
 from azul_runner import (
     BinaryPlugin,
     Feature,
+    FeatureType,
     FeatureValue,
     Job,
     State,
@@ -39,19 +41,27 @@ class AzulPluginRichId(BinaryPlugin):
         }
     )
     FEATURES = [
-        Feature(name="pe_rich_mask", desc="Rich header XOR mask / checksum used", type=str),
-        Feature(name="pe_rich_checksum", desc="Recalculated Rich header checksum", type=str),
-        Feature(name="pe_rich_entry_count", desc="Count of objects for labelled compid/product", type=int),
-        Feature(name="pe_rich_product", desc="Compiler/linker referenced in Rich entry", type=str),
-        Feature(name="pe_rich_linker", desc="Final linker used as recorded by the Rich header", type=str),
-        Feature(name="pe_rich_compid", desc="Rich header entry compid/type field", type=int),
-        Feature(name="processing_failure", desc="Plugin is not able to handle the requested binary", type=str),
-        Feature(name="tag", desc="Any informational label about the binary", type=str),
+        Feature(name="pe_rich_mask", desc="Rich header XOR mask / checksum used", type=FeatureType.String),
+        Feature(name="pe_rich_checksum", desc="Recalculated Rich header checksum", type=FeatureType.String),
+        Feature(
+            name="pe_rich_entry_count", desc="Count of objects for labelled compid/product", type=FeatureType.Integer
+        ),
+        Feature(name="pe_rich_product", desc="Compiler/linker referenced in Rich entry", type=FeatureType.String),
+        Feature(
+            name="pe_rich_linker", desc="Final linker used as recorded by the Rich header", type=FeatureType.String
+        ),
+        Feature(name="pe_rich_compid", desc="Rich header entry compid/type field", type=FeatureType.Integer),
+        Feature(
+            name="processing_failure",
+            desc="Plugin is not able to handle the requested binary",
+            type=FeatureType.String,
+        ),
+        Feature(name="tag", desc="Any informational label about the binary", type=FeatureType.String),
     ]
 
     def execute(self, job: Job):
         """Search the file for Rich Header and parses the details into features."""
-        features = {}
+        features: dict[str, Any] = {}
         data = job.get_data()
         buf = data.read(8000)
         # If there aren't at least 48 bytes the file can't be a PE because it's smaller than the PE header.

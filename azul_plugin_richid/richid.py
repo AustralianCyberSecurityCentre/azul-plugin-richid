@@ -40,7 +40,7 @@ class ParseError(Exception):
     """Error parsing PE file."""
 
 
-def _parse_mappings(data: bytes) -> dict:
+def _parse_mappings(data: str) -> dict:
     # 0x0000 Foo Bar
     return {
         int(ln.split(" ", 1)[0], 16): ln.split(" ", 1)[1].strip()

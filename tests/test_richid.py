@@ -26,8 +26,7 @@ class TestRichId(test_template.TestPlugin):
                 state=State(State.Label.COMPLETED),
                 events=[
                     Event(
-                        entity_type="binary",
-                        entity_id="702e31ed1537c279459a255460f12f0f2863f973e121cd9194957f4f3e7b0994",
+                        sha256="702e31ed1537c279459a255460f12f0f2863f973e121cd9194957f4f3e7b0994",
                         features={
                             "pe_rich_checksum": [FV("0xa572feb8")],
                             "pe_rich_compid": [

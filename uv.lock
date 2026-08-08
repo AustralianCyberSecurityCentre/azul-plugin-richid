@@ -53,7 +53,7 @@ wheels = [
 
 [[package]]
 name = "azul-bedrock"
-version = "12.0.70"
+version = "12.0.75"
 source = { registry = "https://devpi.acsc.internal/azul/stable/" }
 dependencies = [
     { name = "babel" },
@@ -71,7 +71,7 @@ dependencies = [
     { name = "yara-x" },
 ]
 wheels = [
-    { url = "https://devpi.acsc.internal/azul/stable/+f/0b4/3a14965eeaa90/azul_bedrock-12.0.70-py3-none-any.whl", hash = "sha256:0b43a14965eeaa90ef144dafc333c54b7c1e6fdc95a140ba4a2d855520360198" },
+    { url = "https://devpi.acsc.internal/azul/stable/+f/8a4/ebdf0b2805c9d/azul_bedrock-12.0.75-py3-none-any.whl", hash = "sha256:8a4ebdf0b2805c9d8eaf7d8c878b2e3fb721537de1aab0530dc4efb64c6a02f2" },
 ]
 
 [package.optional-dependencies]
@@ -120,7 +120,7 @@ dev = [
 
 [[package]]
 name = "azul-runner"
-version = "12.0.100"
+version = "12.0.104"
 source = { registry = "https://devpi.acsc.internal/azul/stable/" }
 dependencies = [
     { name = "azul-bedrock" },
@@ -133,7 +133,7 @@ dependencies = [
     { name = "watchdog" },
 ]
 wheels = [
-    { url = "https://devpi.acsc.internal/azul/stable/+f/e5a/1f568093fb6be/azul_runner-12.0.100-py3-none-any.whl", hash = "sha256:e5a1f568093fb6be07778089fe9b7e5f586533e90e151e1b608ecc20b709cc4c" },
+    { url = "https://devpi.acsc.internal/azul/stable/+f/39d/06bae4a52ae99/azul_runner-12.0.104-py3-none-any.whl", hash = "sha256:39d06bae4a52ae99f4a51e3a521f5c327baadbf4837c60eee0a90d605b62e6c7" },
 ]
 
 [package.optional-dependencies]
@@ -1361,15 +1361,14 @@ wheels = [
 
 [[package]]
 name = "python-discovery"
-version = "1.5.0"
+version = "1.5.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "filelock" },
-    { name = "platformdirs" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/f1/51/276f964496a5714ab9f320896195639086881c2b39c03b5ad13de84acbb8/python_discovery-1.5.0.tar.gz", hash = "sha256:3e014c6327154d3dda27939a9a0dc9c5c000439f1906d3f303b48f984bd2ecef", size = 72483, upload-time = "2026-07-21T13:14:14.641Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/04/b7/1581a8103855c43567776aa34135e5ec3c597346c23bfd10c7eb5e0b10a4/python_discovery-1.5.1.tar.gz", hash = "sha256:e2ea8b884cd1701f386eda8cf327b87743f1dc21b7f784470799537d95635384", size = 77200, upload-time = "2026-07-31T22:06:02.48Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/c7/7b/14882602ddee241d7984a742fcb423cb4a30fb0d6efc546ac3129fba475a/python_discovery-1.5.0-py3-none-any.whl", hash = "sha256:70c4fc61b4e7404e44f01d6fc44a715c4d685ca6cea83d295922f05891877c98", size = 34205, upload-time = "2026-07-21T13:14:13.398Z" },
+    { url = "https://files.pythonhosted.org/packages/6a/07/a89b539750a159d5101c4eb9fc84e2961f65cefbd5e0b7440b284471c0b0/python_discovery-1.5.1-py3-none-any.whl", hash = "sha256:ac07f44cade589d954e9d6a1e1468539fdddd2cf676beb51da73e0f156b7c932", size = 35752, upload-time = "2026-07-31T22:06:01.116Z" },
 ]
 
 [[package]]

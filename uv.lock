@@ -120,7 +120,7 @@ dev = [
 
 [[package]]
 name = "azul-runner"
-version = "12.0.127"
+version = "12.0.130"
 source = { registry = "https://devpi.acsc.internal/azul/stable/" }
 dependencies = [
     { name = "azul-bedrock" },
@@ -133,7 +133,7 @@ dependencies = [
     { name = "watchdog" },
 ]
 wheels = [
-    { url = "https://devpi.acsc.internal/azul/stable/+f/dd9/58a8133fbe42c/azul_runner-12.0.127-py3-none-any.whl", hash = "sha256:dd958a8133fbe42cc80a738063c5fbb2e8d5d5f3f70f2b1e4eed8100707d1909" },
+    { url = "https://devpi.acsc.internal/azul/stable/+f/54a/a9557aa99bbbc/azul_runner-12.0.130-py3-none-any.whl", hash = "sha256:54aa9557aa99bbbcbbdb9940c8d433c1563fc9eb29d64dcd27afff4bf734f4ea" },
 ]
 
 [package.optional-dependencies]
